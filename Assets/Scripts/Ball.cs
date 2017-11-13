@@ -78,22 +78,16 @@ public class Ball : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		if (other.gameObject.CompareTag ("WallLeft")) {
-
 			count1 = count1 + 1;
 			setCountText1();
-
 			this.gameObject.transform.position = startPos;
-
-
+             		//col.gameObject.GetComponent<Renderer>().material.color = Color.cyan;
 		}
-
 		if (other.gameObject.CompareTag ("WallRight")){
 			count2 = count2 + 1;
 			setCountText2();
-
 			this.gameObject.transform.position = startPos;
-
-
+			//col.gameObject.GetComponent<Renderer>().material.color = Color.cyan;
 		}
 	}
 
