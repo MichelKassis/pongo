@@ -13,6 +13,10 @@ public class Ball : MonoBehaviour {
 	private int count2;
 	private Vector3 startPos;
 
+	Color [] colors = new Color[6];
+
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +30,9 @@ public class Ball : MonoBehaviour {
 		startPos = transform.position;
 
 		GetComponent<Rigidbody2D> ().velocity = Vector2.right * speed;
+
+
+
 	}
 
 	float hitFactor(Vector2 ballPos, Vector2 racketPos,
@@ -73,34 +80,66 @@ public class Ball : MonoBehaviour {
 			// Set Velocity with dir * speed
 			GetComponent<Rigidbody2D>().velocity = dir * speed;
 		}
+
+
+
+		if (col.gameObject.CompareTag ("WallLeft")) {
+			count1 = count1 + 1;
+			setCountText1();
+			//this.gameObject.transform.position = startPos;
+			//col.gameObject.GetComponent<Renderer>().material.color = Color.cyan;
+			gameObject.GetComponent<Renderer>().material.color = Random.ColorHSV (0f, 1f, 1f, 1f, 0.5f, 1f);
+		}
+		if (col.gameObject.CompareTag ("WallRight")){
+			count2 = count2 + 1;
+			setCountText2();
+			//this.gameObject.transform.position = startPos;
+			gameObject.GetComponent<Renderer>().material.color = Random.ColorHSV (0f, 1f, 1f, 1f, 0.5f, 1f);
+		}
+
+
+
 	}
 
+
+	/*
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		if (other.gameObject.CompareTag ("WallLeft")) {
 			count1 = count1 + 1;
 			setCountText1();
-			this.gameObject.transform.position = startPos;
-             		//col.gameObject.GetComponent<Renderer>().material.color = Color.cyan;
+			//this.gameObject.transform.position = startPos;
+            //col.gameObject.GetComponent<Renderer>().material.color = Color.cyan;
 		}
 		if (other.gameObject.CompareTag ("WallRight")){
 			count2 = count2 + 1;
 			setCountText2();
-			this.gameObject.transform.position = startPos;
+			//this.gameObject.transform.position = startPos;
 			//col.gameObject.GetComponent<Renderer>().material.color = Color.cyan;
 		}
 	}
-
+*/
 	void setCountText1(){
-		countText1.text = "Count Player 2: " + count1.ToString ();
+		int i = count1;
+		colors [0] = Color.blue;
+		colors [1] = Color.red;
+		colors [2] = Color.green;
+		colors [3] = Color.yellow;
+		colors [4] = Color.blue;
+
+		countText1.text = "" + count1.ToString ();
+		countText1.color = Random.ColorHSV (0f, 1f, 1f, 1f, 0.5f, 1f);
 	}
 	void setCountText2(){
+		int i = count2;
+		colors [0] = Color.blue;
+		colors [1] = Color.red;
+		colors [2] = Color.green;
+		colors [3] = Color.yellow;
+		colors [4] = Color.blue;
 
-		countText2.text = "Count Player 1: " + count2.ToString ();
+		countText2.text = "" + count2.ToString ();
+		countText2.color = Random.ColorHSV (0f, 1f, 1f, 1f, 0.5f, 1f);
 	}
-
-
-
-
 
 }
