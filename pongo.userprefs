@@ -1,9 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Ball.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MoveRacket.cs">
     <Files>
-      <File FileName="Assets\Scripts\MoveRacket.cs" Line="11" Column="17" />
-      <File FileName="Assets\Scripts\Ball.cs" Line="48" Column="44" />
+      <File FileName="Assets\Scripts\MoveRacket.cs" Line="29" Column="3" />
+      <File FileName="Assets\Scripts\Ball.cs" Line="82" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
