@@ -12,6 +12,9 @@ public class Ball : MonoBehaviour {
 	private int count1;
 	private int count2;
 	private Vector3 startPos;
+	public AudioSource[] audio;
+	public AudioSource pewSound;
+	public AudioSource screamSound;
 
 	Color [] colors = new Color[6];
 
@@ -30,6 +33,11 @@ public class Ball : MonoBehaviour {
 		startPos = transform.position;
 
 		GetComponent<Rigidbody2D> ().velocity = Vector2.right * speed;
+
+		audio= GetComponents<AudioSource> ();
+
+		pewSound = audio [0];
+		screamSound = audio [1];
 
 
 
@@ -65,6 +73,8 @@ public class Ball : MonoBehaviour {
 
 			// Set Velocity with dir * speed
 			GetComponent<Rigidbody2D>().velocity = dir * speed;
+			pewSound.Play ();
+
 		}
 
 		// Hit the right Racket?
@@ -79,6 +89,7 @@ public class Ball : MonoBehaviour {
 
 			// Set Velocity with dir * speed
 			GetComponent<Rigidbody2D>().velocity = dir * speed;
+			pewSound.Play ();
 		}
 
 
@@ -89,12 +100,14 @@ public class Ball : MonoBehaviour {
 			//this.gameObject.transform.position = startPos;
 			//col.gameObject.GetComponent<Renderer>().material.color = Color.cyan;
 			gameObject.GetComponent<Renderer>().material.color = Random.ColorHSV (0f, 1f, 1f, 1f, 0.5f, 1f);
+			screamSound.Play ();
 		}
 		if (col.gameObject.CompareTag ("WallRight")){
 			count2 = count2 + 1;
 			setCountText2();
 			//this.gameObject.transform.position = startPos;
 			gameObject.GetComponent<Renderer>().material.color = Random.ColorHSV (0f, 1f, 1f, 1f, 0.5f, 1f);
+			screamSound.Play ();
 		}
 
 

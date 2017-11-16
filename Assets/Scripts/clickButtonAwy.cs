@@ -9,5 +9,13 @@ public class clickButtonAwy : MonoBehaviour {
 	SceneManager.LoadScene (sceneToChangeTo);
 	}
 
+	public void restartScene(int sceneToChangeTo){
+		SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
+	}
+
+	public void quitApp(){
+		Application.Quit();
+	}
+
 
 }

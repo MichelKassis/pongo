@@ -8,6 +8,8 @@ TagManager:
   - WallRight
   - Count
   - wALLPAPER
+  - music
+  - backMusic
   layers:
   - Default
   - TransparentFX
