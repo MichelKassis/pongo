@@ -36,3 +36,4 @@ D:\Programming\Games\pongo\Temp\bin\Debug\UnityEngine.HoloLens.xml
 D:\Programming\Games\pongo\Temp\bin\Debug\UnityEngine.SpatialTracking.xml
 D:\Programming\Games\pongo\obj\Debug\Assembly-CSharp.dll
 D:\Programming\Games\pongo\obj\Debug\Assembly-CSharp.pdb
+D:\Programming\Games\pongo\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
